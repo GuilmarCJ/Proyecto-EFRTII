@@ -151,6 +151,8 @@
             <a href="#politicas-y-terminos" class="text-white">Politicas y Terminos</a>
             <a href="#libro-de-reclamaciones" class="text-white">Libro de Reclamaciones</a>
         </div>
+        <br>
+        <p>CanCan</p>
         <p>&copy; 2025 CanCan. todos los derechos reservados.</p>
     </footer>
 
