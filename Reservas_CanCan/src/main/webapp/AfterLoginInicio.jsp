@@ -231,54 +231,8 @@
             height: auto;
             max-height: 60px;
         }
-        /* Modal Styles */
-        .modal {
-          position: fixed;
-          z-index: 1;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          overflow: auto;
-          background-color: rgba(0,0,0,0.4);
-        }
+        /* Modal Styles - REMOVED */
 
-        .modal-content {
-          background-color: #fefefe;
-          margin: 15% auto;
-          padding: 20px;
-          border: 1px solid #888;
-          width: 80%;
-          max-width: 400px;
-          text-align: center;
-        }
-
-        .modal-content a {
-          display: block;
-          padding: 10px;
-          margin: 5px 0;
-          text-decoration: none;
-          color: var(--secondary-color);
-           background-color: var(--primary-color); /* Light goldenrod color */
-          border-radius: 5px;
-        }
-
-        .modal-content a:hover {
-          background-color: #e6c600;
-        }
-        .close {
-          color: #aaa;
-          float: right;
-          font-size: 28px;
-          font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-          color: var(--secondary-color);
-          text-decoration: none;
-          cursor: pointer;
-        }
        .box{
             width: 25px;
             height: 25px;
@@ -336,6 +290,15 @@
     .section-img-container a:hover img {
         transform: rotateY(180deg);
     }
+
+    .profile-image {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+        margin-left: 10px;
+    }
     </style>
     <!-- final de CSS -->
 </head>
@@ -353,13 +316,16 @@
                     <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
                     <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+                    <!-- Mi Cuenta dropdown replaced with image -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="miCuentaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Mi Cuenta
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Mi Cuenta" class="profile-image">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="miCuentaDropdown">
-                            <li><a class="dropdown-item" href="#iniciar-sesion">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item" href="#registrate">Regístrate</a></li>
+                            <li><a class="dropdown-item" href="#cuenta">Cuenta</a></li>
+                            <li><a class="dropdown-item" href="#opciones">Opciones</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#cerrar-sesion">Cerrar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -386,7 +352,7 @@
             <img src="https://cordobamegusta.es/wp-content/uploads/2017/05/salmorejo-cordobes-cordobamegusta.es_.jpg" class="d-block w-100" alt="comida 2">
             <div class="carousel-caption d-none d-md-block">
                 <div class="carousel-caption-link-container">
-                    <a href="#" class="carousel-caption-link" data-modal-target="#modal-login">Reserva de mesas</a>
+                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
                 </div>
             </div>
         </div>
@@ -394,7 +360,7 @@
             <img src="https://i.blogs.es/28bac8/1351621649911/840_560.jpeg" class="d-block w-100" alt="Comida 1">
             <div class="carousel-caption d-none d-md-block">
                 <div class="carousel-caption-link-container">
-                    <a href="#" class="carousel-caption-link" data-modal-target="#modal-login">Reserva de mesas</a>
+                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
                 </div>
             </div>
         </div>
@@ -402,7 +368,7 @@
             <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/03/13/migas-manchegas.jpeg" class="d-block w-100" alt="comida 3">
             <div class="carousel-caption d-none d-md-block">
                  <div class="carousel-caption-link-container">
-                    <a href="#" class="carousel-caption-link" data-modal-target="#modal-login">Reserva de mesas</a>
+                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
                 </div>
             </div>
         </div>
@@ -526,50 +492,13 @@
     </footer>
     <!-- final de footer -->
 
-    <!-- inicio de modal -->
-    <!-- The Modal -->
-    <div id="modal-login" class="modal">
-    <div class="modal-content">
-        <span class="close">×</span>
-        <a href="#iniciar-sesion">Iniciar Sesión</a>
-        <a href="#registrate">Regístrate</a>
-    </div>
-    </div>
-    <!-- final de modal -->
+    <!-- inicio de modal - REMOVED -->
+    <!-- final de modal - REMOVED -->
 
     <!-- inicio de scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const modalLinks = document.querySelectorAll('[data-modal-target]');
-            const modals = document.querySelectorAll('.modal');
-            const closeButtons = document.querySelectorAll('.close');
-
-            modalLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const modalId = this.getAttribute('data-modal-target');
-                    const modal = document.querySelector(modalId);
-                    modal.style.display = "block";
-                });
-            });
-
-            closeButtons.forEach(closeBtn => {
-              closeBtn.addEventListener('click', function() {
-                const modal = this.closest('.modal');
-                modal.style.display = 'none';
-              });
-            });
-
-            window.addEventListener('click', function(event) {
-              modals.forEach(modal => {
-                  if (event.target === modal) {
-                      modal.style.display = "none";
-                  }
-              });
-            });
-        });
-
+        // No more modal scripts needed
     </script>
     <!-- final de scripts -->
 </body>
