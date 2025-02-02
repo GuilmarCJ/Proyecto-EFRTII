@@ -229,7 +229,7 @@
 
     <!-- Contenedor principal -->
     <div class="container">
-        <!-- Sección de bienvenida -->
+        <!-- Sección de bienvenidaa -->
         <div class="welcome-section">
         <br/>
         <br/>
