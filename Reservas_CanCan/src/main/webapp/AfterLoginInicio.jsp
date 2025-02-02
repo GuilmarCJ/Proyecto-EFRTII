@@ -280,7 +280,7 @@
         color: white;
         font-size: 1.5em;
         transform: rotateY(180deg);
-        transition: transform 3s;
+        transition: transform 0.5s;
         backface-visibility: hidden;
     }
 
