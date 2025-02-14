@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CanCan</title>
+    <title>Términos y Condiciones</title>
     <link rel="icon" type="image/png" href="https://cdn.worldvectorlogo.com/logos/cancan.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -58,65 +58,6 @@
         .footer a:hover {
             color: var(--link-hover-color);
             text-decoration: underline;
-        }
-
-        .responsive-img {
-            max-height: 300px;
-            max-width: 100%;
-            width: auto;
-            height: auto;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            opacity: 0.7;
-        }
-
-        .carousel-caption {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--secondary-color);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-            text-align: center;
-        }
-
-        .carousel-caption-link {
-            font-size: 4vw;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .carousel-caption-link:hover {
-            color: var(--link-hover-color);
-        }
-
-        .carousel-caption p {
-            font-size: 2.5vw;
-        }
-
-        @media ( max-width : 768px) {
-            .carousel-caption-link {
-                font-size: 5vw;
-            }
-            .carousel-caption p {
-                font-size: 3vw;
-            }
-        }
-
-        .section-img-container {
-            padding: 0 2%;
-            width: 100%;
-        }
-
-        .section-img {
-            max-width: 100%;
-            width: auto;
-            height: auto;
-            display: block;
         }
 
         /* Styles for the new footer */
@@ -237,68 +178,14 @@
             width: 25px;
             height: 25px;
         }
-
-.section-img-container {
-        padding: 0 2%;
-        width: 100%;
-    }
-
-    .section-img-container .col-md-4 {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .section-img-container a {
-        display: block;
-        perspective: 1000px;
-        position: relative;
-        overflow: hidden;
-        padding-top: 100%;
-        position: relative;
-    }
-
-    .section-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 3s;
-    }
-
-    .section-img-back{
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.5em;
-        transform: rotateY(180deg);
-        transition: transform 0.5s;
-        backface-visibility: hidden;
-    }
-
-    .section-img-container a:hover .section-img-back {
-        transform: rotateY(0deg);
-    }
-    .section-img-container a:hover img {
-        transform: rotateY(180deg);
-    }
-
-    .profile-image {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        object-fit: cover;
-        cursor: pointer;
-        margin-left: 10px;
-    }
+        .profile-image {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+            margin-left: 10px;
+        }
     </style>
     <!-- final de CSS -->
 </head>
@@ -333,91 +220,63 @@
     <!-- final de navbar -->
 
     <!-- inicio de header -->
-    <header class="header text-center py-5">
-        <h4>Comida española para todo el Perú desde 1986</h4>
+   <header class="header text-center py-5">
+        <h4>Términos y Condiciones de Uso</h4>
     </header>
     <!-- final de header -->
 
-    <!-- inicio de carousel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://cordobamegusta.es/wp-content/uploads/2017/05/salmorejo-cordobes-cordobamegusta.es_.jpg" class="d-block w-100" alt="comida 2">
-            <div class="carousel-caption d-none d-md-block">
-                <div class="carousel-caption-link-container">
-                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://i.blogs.es/28bac8/1351621649911/840_560.jpeg" class="d-block w-100" alt="Comida 1">
-            <div class="carousel-caption d-none d-md-block">
-                <div class="carousel-caption-link-container">
-                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/03/13/migas-manchegas.jpeg" class="d-block w-100" alt="comida 3">
-            <div class="carousel-caption d-none d-md-block">
-                 <div class="carousel-caption-link-container">
-                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-    <!-- final de carousel -->
+  <main class="container my-5">
+    <article>
+        <h1 class="mb-4" style="color: var(--secondary-color);">Términos y Condiciones</h1>
 
-    <!-- inicio de section images -->
-    <section class="container section-img-container my-5">
-        <div class="row text-center d-flex align-items-stretch">
-             <div class="col-12 col-md-4 mb-4">
-                    <a href="#menu">
-                        <img src="https://elikaeskola.com/wp-content/uploads/me-siento-culpable-por-comer.png" class="img-fluid section-img" alt="comida 2">
-                        <div class="section-img-back">Plato 1</div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <a href="#menu">
-                        <img src="https://www.aceitesdeolivadeespana.com/wp-content/uploads/2019/05/pulpo-a-la-gallega.jpg" class="img-fluid section-img" alt="Comida 1">
-                        <div class="section-img-back">Plato 2</div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <a href="#menu">
-                        <img src="https://www.paulinacocina.net/wp-content/uploads/2022/06/receta-de-langostinos-al-ajillo-1200x900.jpg" class="img-fluid section-img" alt="comida 3">
-                        <div class="section-img-back">Plato 3</div>
-                    </a>
-                </div>
-            <div class="col-12 col-md-4 mb-4">
-                <a href="#menu"> <img src="https://i.blogs.es/3f1c6b/gallina-en-pepitoria/1366_2000.jpg" class="img-fluid section-img" alt="Delicious Dish 1">
-                    <div class="section-img-back">Gallina en Pepitoria</div></a>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-               <a href="#menu"> <img src="https://i.blogs.es/34fb2d/marmitako/1366_2000.jpg" class="img-fluid section-img" alt="Delicious Dish 2">
-               <div class="section-img-back">Marmitako</div></a>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-               <a href="#menu"> <img src="https://okdiario.com/img/2021/07/26/receta-de-pescado-frito-a-la-andaluza-o-pescaito-frito-1-620x349.jpg" class="img-fluid section-img" alt="Restaurant Interior">
-                <div class="section-img-back">Pescado Frito</div></a>
-            </div>
-        </div>
-    </section>
-    <!-- final de section images -->
+        <section>
+            <h2 class="h3" style="color: var(--secondary-color);">1. Introducción</h2>
+            <p>
+                Bienvenido a CanCan.  Estos términos y condiciones rigen el uso de nuestro sitio web y servicios. Al acceder o utilizar nuestro sitio web, usted acepta estar sujeto a estos términos.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="h3" style="color: var(--secondary-color);">2. Reservas</h2>
+            <p>
+                Las reservas están sujetas a disponibilidad. Nos reservamos el derecho de cancelar o modificar reservas en caso de circunstancias imprevistas.
+            </p>
+        </section>
+
+        <section>
+             <h2 class="h3" style="color: var(--secondary-color);">3. Uso del menu</h2>
+            <p>
+                Al acceder y utilizar nuestro menú en línea, usted acepta los siguientes términos y condiciones.  Estos términos se aplican a todos los usuarios del menú, ya sean clientes registrados o visitantes ocasionales.
+            </p>
+            <h3 class="h4" style="color: var(--secondary-color);">3.1 Disponibilidad de Productos</h3>
+            <p>
+                La disponibilidad de los platos y bebidas mostrados en nuestro menú en línea está sujeta a cambios sin previo aviso.  Hacemos todo lo posible por mantener el menú actualizado, pero no podemos garantizar que todos los elementos estén disponibles en todo momento.
+            </p>
+        </section>
+
+          <section>
+            <h2 class="h3" style="color: var(--secondary-color);">4. Precios</h2>
+           <p>
+               Los precios mostrados en nuestro menú en línea son válidos únicamente para pedidos realizados a través de la plataforma web.  Estos precios pueden diferir de los precios ofrecidos en nuestro restaurante físico o a través de otros canales de venta.
+           </p>
+           <h3 class="h4" style="color: var(--secondary-color);">4.1 Impuestos y Cargos Adicionales</h3>
+           <p>
+               Todos los precios mostrados incluyen los impuestos aplicables según la legislación vigente. Sin embargo, pueden aplicarse cargos adicionales, como gastos de envío o propinas, que se indicarán claramente durante el proceso de pedido.
+           </p>
+           <h3 class="h4" style="color: var(--secondary-color);">4.2  Modificaciones de Precios</h3>
+           <p>
+              Nos reservamos el derecho de modificar los precios de los productos en cualquier momento y sin previo aviso.  Los precios aplicables a su pedido serán los que se muestren en el momento de la confirmación del mismo.
+           </p>
+        </section>
+
+        <section>
+            <h2 class="h3" style="color: var(--secondary-color);">5. Modificaciones</h2>
+            <p>
+               Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento.  Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web.
+            </p>
+        </section>
+    </article>
+</main>
 
     <!-- inicio de footer -->
     <footer class="cpnazo__footer">
@@ -439,6 +298,14 @@
                     <div class="footer-flex-col">
                         <h3 class="footer-title">Páginas</h3>
                         <ul class="footer-redes">
+                            <li>
+                                <a href="AfterLoginInicio.jsp" class="d-flex align-items-center text-white">
+                                    <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                       <i aria-hidden="true" class="fa fa-home text-dark"></i>
+                                    </span>
+                                    <span>Inicio</span>
+                                </a>
+                            </li>
                             <li>
                                 <a href="AfterLoginLibro.jsp" class="d-flex align-items-center text-white">
                                    <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
@@ -484,9 +351,7 @@
 
     <!-- inicio de scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // No more modal scripts needed
-    </script>
+
     <!-- final de scripts -->
 </body>
 </html>

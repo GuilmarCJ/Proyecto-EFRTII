@@ -4,27 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CanCan</title>
+    <title>Mi Cuenta</title>
     <link rel="icon" type="image/png" href="https://cdn.worldvectorlogo.com/logos/cancan.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- inicio de CSS -->
     <style>
         :root {
-          --primary-color: goldenrod;
-          --secondary-color: black;
-          --text-color: white;
-          --link-hover-color: #ffdf00;
+            --primary-color: goldenrod;
+            --secondary-color: black;
+            --text-color: white;
+            --link-hover-color: #ffdf00;
         }
 
-        *{
+       *{
            text-decoration: none;
         }
 
         body {
             color: var(--primary-color);
-            padding-top: 56px;
+            padding-top: 56px; /* Adjust for fixed navbar */
+            background-color: #f8f9fa; /* Light background for the body */
         }
 
         .navbar, .footer {
@@ -45,6 +45,9 @@
         .header {
             background-color: var(--primary-color);
             color: var(--secondary-color);
+            padding: 20px 0; /* Reduced padding */
+            text-align: center;
+            margin-bottom: 30px; /* Spacing between header and content */
         }
 
         .footer {
@@ -53,73 +56,77 @@
 
         .footer a {
             color: var(--text-color);
+             text-decoration: none;
         }
-
-        .footer a:hover {
+         .footer a:hover {
             color: var(--link-hover-color);
             text-decoration: underline;
         }
 
-        .responsive-img {
-            max-height: 300px;
-            max-width: 100%;
-            width: auto;
-            height: auto;
+        .account-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px; /* Spacing before the footer */
         }
 
-        .carousel-item img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            opacity: 0.7;
+        .account-section {
+            margin-bottom: 25px;
         }
 
-        .carousel-caption {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .account-section h2 {
             color: var(--secondary-color);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        .carousel-caption-link {
-            font-size: 4vw;
-            color: var(--text-color);
-            text-decoration: none;
+        .account-section p {
+             color: var(--secondary-color);
         }
 
-        .carousel-caption-link:hover {
-            color: var(--link-hover-color);
+        .account-form label {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 5px; /* Spacing between label and input */
         }
 
-        .carousel-caption p {
-            font-size: 2.5vw;
-        }
-
-        @media ( max-width : 768px) {
-            .carousel-caption-link {
-                font-size: 5vw;
-            }
-            .carousel-caption p {
-                font-size: 3vw;
-            }
-        }
-
-        .section-img-container {
-            padding: 0 2%;
+        .account-form input[type="text"],
+        .account-form input[type="email"],
+        .account-form input[type="password"],
+        .account-form select,
+        .account-form textarea
+         {
             width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            color: var(--secondary-color);
+        }
+        .account-form input::placeholder{
+            color: #999;
         }
 
-        .section-img {
-            max-width: 100%;
-            width: auto;
-            height: auto;
-            display: block;
+        .account-form button {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
-        /* Styles for the new footer */
+        .account-form button:hover {
+            background-color: var(--link-hover-color);
+             color: var(--secondary-color);
+        }
+
+          /* Styles for the new footer */
         .cpnazo__footer {
             background-color: var(--secondary-color);
             color: var(--text-color);
@@ -147,13 +154,13 @@
             flex-wrap: wrap;
             justify-content: space-between;
             margin-top: 20px;
-            align-items: stretch;
+             align-items: stretch;
         }
 
         .footer-flex-col {
             flex: 1;
             margin-bottom: 20px;
-            min-width: 300px;
+             min-width: 300px;
         }
 
         .footer-excert {
@@ -166,16 +173,16 @@
         }
 
         .footer-input input {
-            flex: 1;
+             flex: 1;
             max-width: 250px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
-            color: var(--secondary-color);
+             color: var(--secondary-color);
         }
 
         .cpnazo__btn {
-             background-color: var(--primary-color);
+           background-color: var(--primary-color);
             border: none;
             padding: 10px 10px;
             border-radius: 0 5px 5px 0;
@@ -190,8 +197,7 @@
             display: flex;
             flex-wrap: wrap;
         }
-
-        .footer-redes a {
+         .footer-redes a {
            text-decoration: none;
         }
 
@@ -231,67 +237,8 @@
             height: auto;
             max-height: 60px;
         }
-        /* Modal Styles - REMOVED */
 
-       .box{
-            width: 25px;
-            height: 25px;
-        }
-
-.section-img-container {
-        padding: 0 2%;
-        width: 100%;
-    }
-
-    .section-img-container .col-md-4 {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .section-img-container a {
-        display: block;
-        perspective: 1000px;
-        position: relative;
-        overflow: hidden;
-        padding-top: 100%;
-        position: relative;
-    }
-
-    .section-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 3s;
-    }
-
-    .section-img-back{
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.5em;
-        transform: rotateY(180deg);
-        transition: transform 0.5s;
-        backface-visibility: hidden;
-    }
-
-    .section-img-container a:hover .section-img-back {
-        transform: rotateY(0deg);
-    }
-    .section-img-container a:hover img {
-        transform: rotateY(180deg);
-    }
-
-    .profile-image {
+        .profile-image {
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -299,8 +246,13 @@
         cursor: pointer;
         margin-left: 10px;
     }
+
+   .box{
+            width: 25px;
+            height: 25px;
+        }
+
     </style>
-    <!-- final de CSS -->
 </head>
 <body>
     <!-- inicio de navbar -->
@@ -332,95 +284,66 @@
     </nav>
     <!-- final de navbar -->
 
-    <!-- inicio de header -->
-    <header class="header text-center py-5">
-        <h4>Comida española para todo el Perú desde 1986</h4>
+    <!-- Header -->
+    <header class="header">
+        <h1>Mi Cuenta</h1>
     </header>
-    <!-- final de header -->
 
-    <!-- inicio de carousel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <!-- Account Content -->
+    <div class="container">
+        <div class="account-container">
+            <div class="account-section">
+                <h2>Información Personal</h2>
+                 <form action="#" method="post" class="account-form">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu Nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellidos" class="form-label">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Tus Apellidos" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Tu Correo Electrónico" required>
+                    </div>
+                      <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Tu Teléfono">
+                    </div>
+                     <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección:</label>
+                         <textarea id="direccion" name="direccion" class="form-control" placeholder="Tu dirección" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Actualizar Información</button>
+                </form>
+            </div>
+
+             <div class="account-section">
+                <h2>Cambiar Contraseña</h2>
+                <form action="#" method="post" class="account-form">
+                    <div class="mb-3">
+                        <label for="current-password" class="form-label">Contraseña Actual:</label>
+                        <input type="password" id="current-password" name="current-password" class="form-control" required placeholder="Contraseña Actual">
+                    </div>
+                    <div class="mb-3">
+                        <label for="new-password" class="form-label">Nueva Contraseña:</label>
+                        <input type="password" id="new-password" name="new-password" class="form-control" required placeholder="Nueva Contraseña">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm-password" class="form-label">Confirmar Nueva Contraseña:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" class="form-control" required placeholder="Confirmar Nueva Contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cambiar Contraseña</button>
+                </form>
+            </div>
+
+        </div>
     </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://cordobamegusta.es/wp-content/uploads/2017/05/salmorejo-cordobes-cordobamegusta.es_.jpg" class="d-block w-100" alt="comida 2">
-            <div class="carousel-caption d-none d-md-block">
-                <div class="carousel-caption-link-container">
-                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://i.blogs.es/28bac8/1351621649911/840_560.jpeg" class="d-block w-100" alt="Comida 1">
-            <div class="carousel-caption d-none d-md-block">
-                <div class="carousel-caption-link-container">
-                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/03/13/migas-manchegas.jpeg" class="d-block w-100" alt="comida 3">
-            <div class="carousel-caption d-none d-md-block">
-                 <div class="carousel-caption-link-container">
-                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-    <!-- final de carousel -->
 
-    <!-- inicio de section images -->
-    <section class="container section-img-container my-5">
-        <div class="row text-center d-flex align-items-stretch">
-             <div class="col-12 col-md-4 mb-4">
-                    <a href="#menu">
-                        <img src="https://elikaeskola.com/wp-content/uploads/me-siento-culpable-por-comer.png" class="img-fluid section-img" alt="comida 2">
-                        <div class="section-img-back">Plato 1</div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <a href="#menu">
-                        <img src="https://www.aceitesdeolivadeespana.com/wp-content/uploads/2019/05/pulpo-a-la-gallega.jpg" class="img-fluid section-img" alt="Comida 1">
-                        <div class="section-img-back">Plato 2</div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <a href="#menu">
-                        <img src="https://www.paulinacocina.net/wp-content/uploads/2022/06/receta-de-langostinos-al-ajillo-1200x900.jpg" class="img-fluid section-img" alt="comida 3">
-                        <div class="section-img-back">Plato 3</div>
-                    </a>
-                </div>
-            <div class="col-12 col-md-4 mb-4">
-                <a href="#menu"> <img src="https://i.blogs.es/3f1c6b/gallina-en-pepitoria/1366_2000.jpg" class="img-fluid section-img" alt="Delicious Dish 1">
-                    <div class="section-img-back">Gallina en Pepitoria</div></a>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-               <a href="#menu"> <img src="https://i.blogs.es/34fb2d/marmitako/1366_2000.jpg" class="img-fluid section-img" alt="Delicious Dish 2">
-               <div class="section-img-back">Marmitako</div></a>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-               <a href="#menu"> <img src="https://okdiario.com/img/2021/07/26/receta-de-pescado-frito-a-la-andaluza-o-pescaito-frito-1-620x349.jpg" class="img-fluid section-img" alt="Restaurant Interior">
-                <div class="section-img-back">Pescado Frito</div></a>
-            </div>
-        </div>
-    </section>
-    <!-- final de section images -->
-
-    <!-- inicio de footer -->
-    <footer class="cpnazo__footer">
+    <!-- Footer -->
+   <footer class="cpnazo__footer">
         <div class="cpnazo__footer-top">
             <div class="container">
                 <div class="footer-flex">
@@ -480,13 +403,7 @@
             </div>
         </div>
     </footer>
-    <!-- final de footer -->
 
-    <!-- inicio de scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // No more modal scripts needed
-    </script>
-    <!-- final de scripts -->
 </body>
 </html>

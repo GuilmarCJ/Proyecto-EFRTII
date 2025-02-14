@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CanCan</title>
+    <title>Contacto</title>
     <link rel="icon" type="image/png" href="https://cdn.worldvectorlogo.com/logos/cancan.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- inicio de CSS -->
     <style>
-        :root {
+       :root {
           --primary-color: goldenrod;
           --secondary-color: black;
           --text-color: white;
@@ -24,7 +23,7 @@
 
         body {
             color: var(--primary-color);
-            padding-top: 56px;
+            padding-top: 56px; /* Adjust for fixed navbar */
         }
 
         .navbar, .footer {
@@ -58,65 +57,6 @@
         .footer a:hover {
             color: var(--link-hover-color);
             text-decoration: underline;
-        }
-
-        .responsive-img {
-            max-height: 300px;
-            max-width: 100%;
-            width: auto;
-            height: auto;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            opacity: 0.7;
-        }
-
-        .carousel-caption {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--secondary-color);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-            text-align: center;
-        }
-
-        .carousel-caption-link {
-            font-size: 4vw;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .carousel-caption-link:hover {
-            color: var(--link-hover-color);
-        }
-
-        .carousel-caption p {
-            font-size: 2.5vw;
-        }
-
-        @media ( max-width : 768px) {
-            .carousel-caption-link {
-                font-size: 5vw;
-            }
-            .carousel-caption p {
-                font-size: 3vw;
-            }
-        }
-
-        .section-img-container {
-            padding: 0 2%;
-            width: 100%;
-        }
-
-        .section-img {
-            max-width: 100%;
-            width: auto;
-            height: auto;
-            display: block;
         }
 
         /* Styles for the new footer */
@@ -167,7 +107,7 @@
 
         .footer-input input {
             flex: 1;
-            max-width: 250px;
+            max-width: 250px; /* Adjust the value as needed */
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -192,17 +132,17 @@
         }
 
         .footer-redes a {
-           text-decoration: none;
+           text-decoration: none; /* Remove underline from links */
         }
 
         .footer-redes a:hover {
-             text-decoration: none;
+             text-decoration: none; /* Ensure underline is not added on hover */
         }
         .footer-redes li {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            margin-right: 15px;
+            margin-right: 15px; /* Add spacing between items */
         }
 
         .footer-redes li:last-child {
@@ -231,76 +171,67 @@
             height: auto;
             max-height: 60px;
         }
-        /* Modal Styles - REMOVED */
+        /* Modal Styles - REMOVED*/
 
        .box{
             width: 25px;
             height: 25px;
         }
 
-.section-img-container {
-        padding: 0 2%;
-        width: 100%;
-    }
+        .form-label {
+            color: var(--secondary-color); /* Dark text for labels */
+            font-weight: bold;
+        }
 
-    .section-img-container .col-md-4 {
-        display: flex;
-        flex-direction: column;
-    }
+          /* Style for form controls */
+        .form-control {
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+            margin-bottom: 1rem; /* Add some spacing between form elements */
+        }
 
-    .section-img-container a {
-        display: block;
-        perspective: 1000px;
-        position: relative;
-        overflow: hidden;
-        padding-top: 100%;
-        position: relative;
-    }
+        /* Contact info styles */
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        .contact-info h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        .contact-info p {
+            margin-bottom: 0.5rem;
+             color: var(--secondary-color);
+        }
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: var(--primary-color); /* Icon color */
+        }
 
-    .section-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 3s;
-    }
+        /* Map container styles */
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin-bottom: 2rem;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .profile-image {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+            margin-left: 10px;
+        }
 
-    .section-img-back{
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.5em;
-        transform: rotateY(180deg);
-        transition: transform 0.5s;
-        backface-visibility: hidden;
-    }
-
-    .section-img-container a:hover .section-img-back {
-        transform: rotateY(0deg);
-    }
-    .section-img-container a:hover img {
-        transform: rotateY(180deg);
-    }
-
-    .profile-image {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        object-fit: cover;
-        cursor: pointer;
-        margin-left: 10px;
-    }
     </style>
-    <!-- final de CSS -->
 </head>
 <body>
     <!-- inicio de navbar -->
@@ -332,94 +263,54 @@
     </nav>
     <!-- final de navbar -->
 
-    <!-- inicio de header -->
-    <header class="header text-center py-5">
-        <h4>Comida española para todo el Perú desde 1986</h4>
-    </header>
-    <!-- final de header -->
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="mb-4"  style="color: var(--secondary-color);">Contacto</h1>
+                <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
 
-    <!-- inicio de carousel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://cordobamegusta.es/wp-content/uploads/2017/05/salmorejo-cordobes-cordobamegusta.es_.jpg" class="d-block w-100" alt="comida 2">
-            <div class="carousel-caption d-none d-md-block">
-                <div class="carousel-caption-link-container">
-                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://i.blogs.es/28bac8/1351621649911/840_560.jpeg" class="d-block w-100" alt="Comida 1">
-            <div class="carousel-caption d-none d-md-block">
-                <div class="carousel-caption-link-container">
-                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/03/13/migas-manchegas.jpeg" class="d-block w-100" alt="comida 3">
-            <div class="carousel-caption d-none d-md-block">
-                 <div class="carousel-caption-link-container">
-                    <a href="#reserva de mesas" class="carousel-caption-link">Reserva de mesas</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-    <!-- final de carousel -->
+                <form action="procesar_contacto.jsp" method="post" novalidate>  <!-- Replace with your actual processing script-->
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        <div class="invalid-feedback">Por favor, ingrese su nombre.</div>
+                    </div>
 
-    <!-- inicio de section images -->
-    <section class="container section-img-container my-5">
-        <div class="row text-center d-flex align-items-stretch">
-             <div class="col-12 col-md-4 mb-4">
-                    <a href="#menu">
-                        <img src="https://elikaeskola.com/wp-content/uploads/me-siento-culpable-por-comer.png" class="img-fluid section-img" alt="comida 2">
-                        <div class="section-img-back">Plato 1</div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <a href="#menu">
-                        <img src="https://www.aceitesdeolivadeespana.com/wp-content/uploads/2019/05/pulpo-a-la-gallega.jpg" class="img-fluid section-img" alt="Comida 1">
-                        <div class="section-img-back">Plato 2</div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <a href="#menu">
-                        <img src="https://www.paulinacocina.net/wp-content/uploads/2022/06/receta-de-langostinos-al-ajillo-1200x900.jpg" class="img-fluid section-img" alt="comida 3">
-                        <div class="section-img-back">Plato 3</div>
-                    </a>
-                </div>
-            <div class="col-12 col-md-4 mb-4">
-                <a href="#menu"> <img src="https://i.blogs.es/3f1c6b/gallina-en-pepitoria/1366_2000.jpg" class="img-fluid section-img" alt="Delicious Dish 1">
-                    <div class="section-img-back">Gallina en Pepitoria</div></a>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="invalid-feedback">Por favor ingrese un correo electrónico válido.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
+                        <div class="invalid-feedback">Por favor, ingrese su mensaje.</div>
+                    </div>
+
+                    <!-- Placeholder for displaying server-side error messages -->
+                    <div id="error-message" class="alert alert-danger" style="display: none;"></div>
+
+                    <button type="submit" class="btn btn-primary" style="background-color: var(--primary-color); color: var(--secondary-color); border-color: var(--primary-color)">Enviar Mensaje</button>
+                </form>
             </div>
-            <div class="col-12 col-md-4 mb-4">
-               <a href="#menu"> <img src="https://i.blogs.es/34fb2d/marmitako/1366_2000.jpg" class="img-fluid section-img" alt="Delicious Dish 2">
-               <div class="section-img-back">Marmitako</div></a>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-               <a href="#menu"> <img src="https://okdiario.com/img/2021/07/26/receta-de-pescado-frito-a-la-andaluza-o-pescaito-frito-1-620x349.jpg" class="img-fluid section-img" alt="Restaurant Interior">
-                <div class="section-img-back">Pescado Frito</div></a>
+
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h2 style="color: var(--secondary-color)">Información de Contacto</h2>
+                    <p><i class="fa fa-map-marker"></i> Calle Principal #123, Ciudad, País</p>
+                    <p><i class="fa fa-phone"></i> +123 456 7890</p>
+                    <p><i class="fa fa-envelope"></i> info@cancan.com</p>
+                </div>
+
+                 <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25064.758312949436!2d-122.4376!3d37.748425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1678488789762!5m2!1sen!2sus"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
         </div>
-    </section>
-    <!-- final de section images -->
+    </main>
 
-    <!-- inicio de footer -->
+     <!-- inicio de footer -->
     <footer class="cpnazo__footer">
         <div class="cpnazo__footer-top">
             <div class="container">
@@ -439,6 +330,14 @@
                     <div class="footer-flex-col">
                         <h3 class="footer-title">Páginas</h3>
                         <ul class="footer-redes">
+                            <li>
+                                <a href="AfterLoginInicio.jsp" class="d-flex align-items-center text-white">
+                                    <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                       <i aria-hidden="true" class="fa fa-home text-dark"></i>
+                                    </span>
+                                    <span>Inicio</span>
+                                </a>
+                            </li>
                             <li>
                                 <a href="AfterLoginLibro.jsp" class="d-flex align-items-center text-white">
                                    <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
@@ -481,12 +380,28 @@
         </div>
     </footer>
     <!-- final de footer -->
-
-    <!-- inicio de scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // No more modal scripts needed
+        //Client-side form validation
+        (function () {
+          'use strict'
+
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.querySelectorAll('form')
+
+          // Loop over them and prevent submission
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
     </script>
-    <!-- final de scripts -->
 </body>
 </html>

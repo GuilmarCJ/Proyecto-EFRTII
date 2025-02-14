@@ -336,6 +336,49 @@
     .section-img-container a:hover img {
         transform: rotateY(180deg);
     }
+
+     /* Styles for the default publicity modal */
+     #defaultPublicityModal {
+        position: fixed;
+        z-index: 1050; /* Higher than the navbar */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7); /* Semi-transparent black */
+        display: flex; /* Use flexbox for centering */
+        align-items: center;
+        justify-content: center;
+    }
+
+     #defaultPublicityModal .modal-content {
+         margin: auto; /* Center the modal content */
+         width: 80%;  /* Adjust as needed */
+         max-width: 600px; /* Or whatever your maximum width should be */
+         position: relative; /* For the close button */
+
+     }
+    #defaultPublicityModal img {
+        width: 100%; /* Make the image responsive */
+        height: auto;
+        display: block; /* Remove extra space below image */
+        border-radius: 5px; /* Optional: Add rounded corners */
+    }
+
+     /*Close button styles*/
+    #defaultPublicityModal .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        z-index: 1051; /* Ensure it's above the image */
+    }
+
+
     </style>
     <!-- final de CSS -->
 </head>
@@ -349,17 +392,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#reserva de mesas">Reserva de mesas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Reservas.jsp">Reserva de mesas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Registro.jsp">Registro</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="miCuentaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Mi Cuenta
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="miCuentaDropdown">
-                            <li><a class="dropdown-item" href="#iniciar-sesion">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item" href="#registrate">Regístrate</a></li>
+                            <li><a class="dropdown-item" href="Login.jsp">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="Registro.jsp">Regístrate</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -476,7 +519,7 @@
                         <h3 class="footer-title">Páginas</h3>
                         <ul class="footer-redes">
                             <li>
-                                <a href="#registro" class="d-flex align-items-center text-white">
+                                <a href="Registro.jsp" class="d-flex align-items-center text-white">
                                     <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
                                        <i aria-hidden="true" class="fa fa-user text-dark"></i>
                                     </span>
@@ -484,7 +527,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#terminos-y-condiciones" class="d-flex align-items-center text-white">
+                                <a href="Terminos.jsp" class="d-flex align-items-center text-white">
                                      <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
                                         <i aria-hidden="true" class="fa fa-copyright text-dark"></i>
                                      </span>
@@ -492,7 +535,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#libro-reclamaciones" class="d-flex align-items-center text-white">
+                                <a href="Libro.jsp" class="d-flex align-items-center text-white">
                                    <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
                                         <i aria-hidden="true" class="fa fa-envelope text-dark"></i>
                                     </span>
@@ -500,7 +543,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#contacto" class="d-flex align-items-center text-white">
+                                <a href="Contacto.jsp" class="d-flex align-items-center text-white">
                                     <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
                                          <i aria-hidden="true" class="fa fa-envelope text-dark"></i>
                                     </span>
@@ -537,6 +580,19 @@
     </div>
     <!-- final de modal -->
 
+
+    <!-- Default Publicity Modal -->
+       <div id="defaultPublicityModal" class="modal" style="display: none;">
+           <div class="modal-content">
+               <span class="close">×</span>
+               <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fedit.org%2Fes%2Fblog%2Fplantillas-restaurante-espanol&psig=AOvVaw2lIaoV5RTJ3MppL-N_EnwC&ust=1739577782432000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMCon7PuwYsDFQAAAAAdAAAAABAE" target="_blank">
+                   <img src="https://edit.org/img/blog/n/jzv-1024-plantilla-banner-oferta-cerveza-tapa-restaurante-espanol.webp" alt="Publicidad">
+               </a>
+           </div>
+       </div>
+    <!-- Final de Default Publicity Modal-->
+
+
     <!-- inicio de scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -568,6 +624,33 @@
                   }
               });
             });
+
+             // Show the default publicity modal on page load
+            const defaultPublicityModal = document.getElementById('defaultPublicityModal');
+            const closeDefaultModalBtn = defaultPublicityModal.querySelector('.close');
+
+             // Function to show modal
+            function showDefaultModal(){
+               defaultPublicityModal.style.display = "flex"; // Use flex to correctly center with flexbox styles
+            }
+
+
+            //Close button for the default modal.
+            closeDefaultModalBtn.addEventListener('click', function() {
+                defaultPublicityModal.style.display = 'none';
+            });
+
+            // Close modal if click outside the content
+            window.addEventListener('click', function(event) {
+                if (event.target == defaultPublicityModal) {
+                  defaultPublicityModal.style.display = 'none';
+                }
+            });
+
+             // Delay showing the modal to ensure everything is loaded (optional but good practice)
+            window.onload = function() {
+              setTimeout(showDefaultModal, 500); // Show after 500ms, adjust as needed
+           };
         });
 
     </script>
