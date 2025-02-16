@@ -11,6 +11,7 @@
         body {
             color: goldenrod;
             padding-top: 56px;
+            background-color: brown;
         }
 
         .navbar {
@@ -79,25 +80,25 @@
     </nav>
 <div class="container mt-5">
         <h2 class="text-center">Realice su Reservación</h2>
-        <form id="reservationForm" action="reservar" method="post">
+        <form id="reservationForm" action="ServletReserva?accion=guardar" method="post">
             <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha de reservación</label>
-                <input type="date" class="form-control" id="fecha" name="fecha" required>
+                <input type="date" class="form-control" id="fecha" name="txtFecha" required>
                 <div class="invalid-feedback">Por favor, seleccione una fecha.</div>
             </div>
             <div class="mb-3">
                 <label for="hora" class="form-label">Hora de reservación</label>
-              <input type="time" class="form-control" id="time" name="time" required>
+              <input type="time" class="form-control" id="time" name="txtHora" required>
                 <div class="invalid-feedback">Por favor, seleccione una hora.</div>
             </div>
             <div class="mb-3">
                 <label for="personas" class="form-label">Número de personas</label>
-                <input type="number" class="form-control" id="personas" name="personas" min="1" required>
+                <input type="number" class="form-control" id="personas" name="txtNumPersonas" min="1" required>
                 <div class="invalid-feedback">Ingrese un número válido de personas.</div>
             </div>
             <div class="mb-3">
                 <label for="comentarios" class="form-label">Comentarios adicionales</label>
-                <textarea class="form-control" id="comentarios" name="comentarios" rows="3"></textarea>
+                <textarea class="form-control" id="comentarios" name="txtComentarios" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Reservar</button>
         </form>
