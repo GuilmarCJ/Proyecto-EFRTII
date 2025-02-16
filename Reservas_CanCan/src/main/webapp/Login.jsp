@@ -63,62 +63,34 @@
     </nav>
     <div class="container">
         <div class="login-container">
-            <h2 class="text-center">Iniciar Sesión</h2>
-            <form id="loginForm" class="needs-validation" novalidate>
-                <div class="mb-3">
-                    <label for="username" class="form-label">Usuario</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
-                    <div class="invalid-feedback">El usuario es obligatorio.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                    <div class="invalid-feedback">La contraseña es obligatoria.</div>
-                </div>
-                <div id="errorMessage" class="text-danger text-center"></div>
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Ingresar</button>
-                </div>
-            </form>
-            <p class="text-center mt-3">¿No tienes cuenta? <a href="register.jsp" class="text-white">Regístrate</a></p>
+            <h2 class="text-center mb-4">Iniciar Sesión</h2>
+
+<!-- Mostrar mensaje de error si existe -->
+<% if (request.getAttribute("mensaje") != null) { %>
+    <div class="alert alert-danger text-center" role="alert">
+        <%= request.getAttribute("mensaje") %>
+    </div>
+<% } %>
+
+<!-- Formulario de inicio de sesión -->
+<form action="login" method="post" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="usuario" class="form-label">Usuario</label>
+        <input type="text" class="form-control" id="usuario" name="usuario" required>
+        <div class="invalid-feedback">Por favor, ingresa tu usuario.</div>
+    </div>
+    <div class="mb-3">
+        <label for="contrasena" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+        <div class="invalid-feedback">Por favor, ingresa tu contraseña.</div>
+    </div>
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+    </div>
+</form>
         </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita el envío del formulario
-
-        let username = document.getElementById('username').value.trim();
-        let password = document.getElementById('password').value.trim();
-        let errorMessage = document.getElementById('errorMessage');
-
-        // Verificar si los campos están vacíos
-        if (username === "" || password === "") {
-            errorMessage.innerHTML = "⚠️ Usuario y contraseña son obligatorios.";
-            return;
-        }
-
-        // Hacer una solicitud AJAX al servidor para validar el login
-        fetch('LoginServlet', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                window.location.href = "inicio.jsp"; // Redirige al inicio si es exitoso
-            } else {
-                errorMessage.innerHTML = "⚠️ Usuario o contraseña incorrectos.";
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            errorMessage.innerHTML = "⚠️ Error de conexión con el servidor.";
-        });
-    });
-
-    </script>
 </body>
 </html>

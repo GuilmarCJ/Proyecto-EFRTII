@@ -1,38 +1,38 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import entity.Usuario;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import model.ModelUsuario;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-@WebServlet("/LoginServlet")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        boolean loginExitoso = false;
+    private static final long serialVersionUID = 1L;
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/RestauranteDB", "root", "MySQL");
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM SEGURIDAD_TBRegistro WHERE UsuarioRegis=? AND ContraseñaRegis=SHA2(?, 256)")) {
-            
-            stmt.setString(1, username);
-            stmt.setString(2, password);
-            ResultSet rs = stmt.executeQuery();
-            loginExitoso = rs.next();
-        } catch (SQLException e) {
-            e.printStackTrace();
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String usuario = request.getParameter("usuario");
+        String contrasena = request.getParameter("contrasena");
+
+        ModelUsuario modelUsuario = new ModelUsuario();
+        Usuario user = modelUsuario.validarUsuario(usuario, contrasena);
+
+        if (user == null) {
+            // Usuario no existe o credenciales incorrectas
+            String mensaje = "Usuario o contraseña incorrectos";
+            request.setAttribute("mensaje", mensaje);
+            request.getRequestDispatcher("Login.jsp").forward(request, response);
+        } else {
+            // Usuario válido, crear sesión
+            HttpSession session = request.getSession();
+            session.setAttribute("objUsuario", user);
+
+            // Redirigir a la página de inicio
+            response.sendRedirect("Inicio.jsp");
         }
-
-        response.setContentType("application/json");
-        response.getWriter().write("{\"success\": " + loginExitoso + "}");
     }
 }
-
