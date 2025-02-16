@@ -8,6 +8,7 @@ public class Usuario {
     private String teleUsuario;
 
     // Getters y Setters
+    
     public int getCodUsuario() {
         return codUsuario;
     }

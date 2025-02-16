@@ -8,6 +8,7 @@ import entity.Usuario;
 import util.MySqlDBConexion;
 
 public class ModelUsuario {
+	
 
     public Usuario validarUsuario(String usuario, String contrasena) {
         Usuario user = null;

@@ -7,6 +7,7 @@ public class TestConexion {
         Connection conn = MySqlDBConexion.getConexion();
         if (conn != null) {
             System.out.println("🎉 Conexión exitosa.");
+            
         } else {
             System.out.println("⚠️ Fallo al conectar.");
         }

@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 public class MySqlDBConexion {
     
+	
     // Cargar configuración desde database.properties
     private static ResourceBundle rb = ResourceBundle.getBundle("database");
 
