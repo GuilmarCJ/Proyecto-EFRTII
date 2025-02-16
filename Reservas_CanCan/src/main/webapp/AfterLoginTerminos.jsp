@@ -172,7 +172,6 @@
             height: auto;
             max-height: 60px;
         }
-        /* Modal Styles - REMOVED */
 
        .box{
             width: 25px;

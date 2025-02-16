@@ -23,7 +23,7 @@
 
         body {
             color: var(--primary-color);
-            padding-top: 56px; /* Adjust for fixed navbar */
+            padding-top: 56px;
         }
 
         .navbar, .footer {
@@ -107,7 +107,7 @@
 
         .footer-input input {
             flex: 1;
-            max-width: 250px; /* Adjust the value as needed */
+            max-width: 250px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -132,17 +132,17 @@
         }
 
         .footer-redes a {
-           text-decoration: none; /* Remove underline from links */
+           text-decoration: none;
         }
 
         .footer-redes a:hover {
-             text-decoration: none; /* Ensure underline is not added on hover */
+             text-decoration: none;
         }
         .footer-redes li {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            margin-right: 15px; /* Add spacing between items */
+            margin-right: 15px;
         }
 
         .footer-redes li:last-child {
@@ -199,7 +199,7 @@
           margin: 5px 0;
           text-decoration: none;
           color: var(--secondary-color);
-           background-color: var(--primary-color); /* Light goldenrod color */
+           background-color: var(--primary-color);
           border-radius: 5px;
         }
 
@@ -226,32 +226,33 @@
     </style>
 </head>
 <body>
-    <!-- Navbar (Same as your original) -->
+    <!-- inicio de navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">CANCAN</a>
+            <a class="navbar-brand" href="Inicio.jsp">CANCAN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#reserva de mesas">Reserva de mesas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Reservas.jsp">Reserva de mesas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Carta.jsp">Carta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Registro.jsp">Registro</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="miCuentaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="miCuentaDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Mi Cuenta
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="miCuentaDropdown">
-                            <li><a class="dropdown-item" href="#iniciar-sesion">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item" href="#registrate">Regístrate</a></li>
+                            <li><a class="dropdown-item" href="Login.jsp">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="Registro.jsp">Regístrate</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- final de navbar -->
 
    <main class="container my-5">
     <article>
@@ -306,8 +307,8 @@
     </article>
 </main>
 
-    <!-- Footer (Same as your original) -->
-   <footer class="cpnazo__footer">
+    <!-- inicio de footer -->
+    <footer class="cpnazo__footer">
         <div class="cpnazo__footer-top">
             <div class="container">
                 <div class="footer-flex">
@@ -327,33 +328,37 @@
                         <h3 class="footer-title">Páginas</h3>
                         <ul class="footer-redes">
                             <li>
-                                <a href="#registro" class="d-flex align-items-center text-white">
-                                    <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
-                                       <i aria-hidden="true" class="fa fa-user text-dark"></i>
+                                <a href="Registro.jsp" class="d-flex align-items-center text-white">
+                                    <span
+                                        class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                        <i aria-hidden="true" class="fa fa-user text-dark"></i>
                                     </span>
                                     <span>Registro</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#terminos-y-condiciones" class="d-flex align-items-center text-white">
-                                     <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                <a href="Terminos.jsp" class="d-flex align-items-center text-white">
+                                    <span
+                                        class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
                                         <i aria-hidden="true" class="fa fa-copyright text-dark"></i>
-                                     </span>
+                                    </span>
                                     <span>Términos y condiciones</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#libro-reclamaciones" class="d-flex align-items-center text-white">
-                                   <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                <a href="Libro.jsp" class="d-flex align-items-center text-white">
+                                    <span
+                                        class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
                                         <i aria-hidden="true" class="fa fa-envelope text-dark"></i>
                                     </span>
                                     <span>Libro de reclamaciones</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#contacto" class="d-flex align-items-center text-white">
-                                    <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
-                                         <i aria-hidden="true" class="fa fa-envelope text-dark"></i>
+                                <a href="Contacto.jsp" class="d-flex align-items-center text-white">
+                                    <span
+                                        class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                        <i aria-hidden="true" class="fa fa-envelope text-dark"></i>
                                     </span>
                                     <span>Contacto</span>
                                 </a>
@@ -363,10 +368,13 @@
                 </div>
             </div>
         </div>
+        
+        
         <div class="cpnazo__footer-bottom">
             <div class="container">
                 <div class="cpnazo__footer-bottom-flex">
-                   <a href="#"><img src="https://cdn.worldvectorlogo.com/logos/cancan.svg" alt="CanCan" class="cpnazo__img"></a>
+                    <a href="#"><img src="https://cdn.worldvectorlogo.com/logos/cancan.svg" alt="CanCan"
+                            class="cpnazo__img"></a>
                     <div class="line"></div>
                     <p>
                         © 2025 CanCan. todos los derechos reservados.
@@ -375,6 +383,7 @@
             </div>
         </div>
     </footer>
+    <!-- final de footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

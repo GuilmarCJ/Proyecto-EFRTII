@@ -24,7 +24,7 @@
 
         body {
             color: var(--primary-color);
-            padding-top: 56px; /* Adjust for fixed navbar */
+            padding-top: 56px;
         }
 
         .navbar, .footer {
@@ -60,7 +60,6 @@
             text-decoration: underline;
         }
 
-        /* Styles for the new footer */
         .cpnazo__footer {
             background-color: var(--secondary-color);
             color: var(--text-color);
@@ -108,7 +107,7 @@
 
         .footer-input input {
             flex: 1;
-            max-width: 250px; /* Adjust the value as needed */
+            max-width: 250px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -133,17 +132,17 @@
         }
 
         .footer-redes a {
-           text-decoration: none; /* Remove underline from links */
+           text-decoration: none;
         }
 
         .footer-redes a:hover {
-             text-decoration: none; /* Ensure underline is not added on hover */
+             text-decoration: none;
         }
         .footer-redes li {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            margin-right: 15px; /* Add spacing between items */
+            margin-right: 15px;
         }
 
         .footer-redes li:last-child {
@@ -172,7 +171,6 @@
             height: auto;
             max-height: 60px;
         }
-        /* Modal Styles - REMOVED*/
 
        .box{
             width: 25px;
@@ -180,16 +178,14 @@
         }
 
         .form-label {
-            color: var(--secondary-color); /* Dark text for labels */
+            color: var(--secondary-color);
             font-weight: bold;
         }
 
-          /* Style for form controls */
         .form-control {
             border: 1px solid var(--secondary-color);
             color: var(--secondary-color);
-            margin-bottom: 1rem; /* Add some spacing between form elements */
-        }
+            margin-bottom: 1rem; 
            .profile-image {
             width: 30px;
             height: 30px;

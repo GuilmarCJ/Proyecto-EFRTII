@@ -40,7 +40,7 @@
         .carousel-item img {
             width: 100%;
             height: auto;
-            max-height: 600px; /* Adjust this value as per your preference */
+            max-height: 600px;
         }
         
         .section-img-container {

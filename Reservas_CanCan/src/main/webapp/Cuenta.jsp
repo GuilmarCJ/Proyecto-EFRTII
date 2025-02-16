@@ -23,8 +23,8 @@
 
         body {
             color: var(--primary-color);
-            padding-top: 56px; /* Adjust for fixed navbar */
-            background-color: #f8f9fa; /* Light background for the body */
+            padding-top: 56px;
+            background-color: #f8f9fa;
         }
 
         .navbar, .footer {
@@ -45,9 +45,9 @@
         .header {
             background-color: var(--primary-color);
             color: var(--secondary-color);
-            padding: 20px 0; /* Reduced padding */
+            padding: 20px 0;
             text-align: center;
-            margin-bottom: 30px; /* Spacing between header and content */
+            margin-bottom: 30px;
         }
 
         .footer {
@@ -68,7 +68,7 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px; /* Spacing before the footer */
+            margin-bottom: 30px;
         }
 
         .account-section {
@@ -89,7 +89,7 @@
         .account-form label {
             color: var(--secondary-color);
             font-weight: bold;
-            margin-bottom: 5px; /* Spacing between label and input */
+            margin-bottom: 5px;
         }
 
         .account-form input[type="text"],
@@ -103,7 +103,7 @@
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            box-sizing: border-box;
             color: var(--secondary-color);
         }
         .account-form input::placeholder{

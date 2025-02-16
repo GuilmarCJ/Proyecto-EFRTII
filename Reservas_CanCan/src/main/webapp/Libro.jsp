@@ -107,7 +107,7 @@
 
         .footer-input input {
             flex: 1;
-            max-width: 250px; /* Adjust the value as needed */
+            max-width: 250px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -132,17 +132,17 @@
         }
 
         .footer-redes a {
-           text-decoration: none; /* Remove underline from links */
+           text-decoration: none;
         }
 
         .footer-redes a:hover {
-             text-decoration: none; /* Ensure underline is not added on hover */
+             text-decoration: none;
         }
         .footer-redes li {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            margin-right: 15px; /* Add spacing between items */
+            margin-right: 15px;
         }
 
         .footer-redes li:last-child {
@@ -199,7 +199,7 @@
           margin: 5px 0;
           text-decoration: none;
           color: var(--secondary-color);
-           background-color: var(--primary-color); /* Light goldenrod color */
+           background-color: var(--primary-color);
           border-radius: 5px;
         }
 
@@ -225,7 +225,7 @@
         }
 
         .form-label {
-            color: var(--secondary-color); /* Dark text for labels */
+            color: var(--secondary-color);
             font-weight: bold;
         }
 
@@ -233,32 +233,32 @@
         .form-control {
             border: 1px solid var(--secondary-color);
             color: var(--secondary-color);
-            margin-bottom: 1rem; /* Add some spacing between form elements */
+            margin-bottom: 1rem;
         }
 
     </style>
 </head>
 <body>
-    <!-- Navbar (Same as your original) -->
+    <!-- Navbar (from the first code block) -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">CANCAN</a>
+            <a class="navbar-brand" href="Inicio.jsp">CANCAN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#reserva de mesas">Reserva de mesas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Reservas.jsp">Reserva de mesas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Carta.jsp">Carta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Registro.jsp">Registro</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="miCuentaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="miCuentaDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Mi Cuenta
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="miCuentaDropdown">
-                            <li><a class="dropdown-item" href="#iniciar-sesion">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item" href="#registrate">Regístrate</a></li>
+                            <li><a class="dropdown-item" href="Login.jsp">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="Registro.jsp">Regístrate</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -270,7 +270,7 @@
         <h1 class="mb-4" style="color: var(--secondary-color);">Libro de Reclamaciones</h1>
         <p>Por favor, complete el siguiente formulario para registrar su reclamación:</p>
 
-        <form action="procesar_reclamacion.jsp" method="post" novalidate>  <!-- Replace with your actual processing script -->
+        <form action="procesar_reclamacion.jsp" method="post" novalidate>  <!--  Keep this, but remove the action in the final version -->
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre Completo:</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -301,7 +301,7 @@
         </form>
     </main>
 
-    <!-- Footer (Same as your original) -->
+   <!-- Footer (from the first code block) -->
     <footer class="cpnazo__footer">
         <div class="cpnazo__footer-top">
             <div class="container">
@@ -322,33 +322,37 @@
                         <h3 class="footer-title">Páginas</h3>
                         <ul class="footer-redes">
                             <li>
-                                <a href="#registro" class="d-flex align-items-center text-white">
-                                    <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
-                                       <i aria-hidden="true" class="fa fa-user text-dark"></i>
+                                <a href="Registro.jsp" class="d-flex align-items-center text-white">
+                                    <span
+                                        class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                        <i aria-hidden="true" class="fa fa-user text-dark"></i>
                                     </span>
                                     <span>Registro</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#terminos-y-condiciones" class="d-flex align-items-center text-white">
-                                     <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                <a href="Terminos.jsp" class="d-flex align-items-center text-white">
+                                    <span
+                                        class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
                                         <i aria-hidden="true" class="fa fa-copyright text-dark"></i>
-                                     </span>
+                                    </span>
                                     <span>Términos y condiciones</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#libro-reclamaciones" class="d-flex align-items-center text-white">
-                                   <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                <a href="Libro.jsp" class="d-flex align-items-center text-white">
+                                    <span
+                                        class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
                                         <i aria-hidden="true" class="fa fa-envelope text-dark"></i>
                                     </span>
                                     <span>Libro de reclamaciones</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#contacto" class="d-flex align-items-center text-white">
-                                    <span class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
-                                         <i aria-hidden="true" class="fa fa-envelope text-dark"></i>
+                                <a href="Contacto.jsp" class="d-flex align-items-center text-white">
+                                    <span
+                                        class="box bg-goldenrod rounded-2 d-flex align-items-center justify-content-center me-2">
+                                        <i aria-hidden="true" class="fa fa-envelope text-dark"></i>
                                     </span>
                                     <span>Contacto</span>
                                 </a>
@@ -358,10 +362,13 @@
                 </div>
             </div>
         </div>
+        
+        
         <div class="cpnazo__footer-bottom">
             <div class="container">
                 <div class="cpnazo__footer-bottom-flex">
-                   <a href="#"><img src="https://cdn.worldvectorlogo.com/logos/cancan.svg" alt="CanCan" class="cpnazo__img"></a>
+                    <a href="#"><img src="https://cdn.worldvectorlogo.com/logos/cancan.svg" alt="CanCan"
+                            class="cpnazo__img"></a>
                     <div class="line"></div>
                     <p>
                         © 2025 CanCan. todos los derechos reservados.
@@ -393,6 +400,9 @@
               }, false)
             })
         })()
+
+         // Remove the action attribute (or set to #) in the <form> to prevent actual submission.
+        document.querySelector('form').action = "#";
     </script>
 </body>
 </html>
