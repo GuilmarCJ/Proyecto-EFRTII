@@ -107,7 +107,7 @@
 
         .footer-input input {
             flex: 1;
-            max-width: 250px; /* Adjust the value as needed */
+            max-width: 250px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -132,17 +132,17 @@
         }
 
         .footer-redes a {
-           text-decoration: none; /* Remove underline from links */
+           text-decoration: none;
         }
 
         .footer-redes a:hover {
-             text-decoration: none; /* Ensure underline is not added on hover */
+             text-decoration: none;
         }
         .footer-redes li {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            margin-right: 15px; /* Add spacing between items */
+            margin-right: 15px;
         }
 
         .footer-redes li:last-child {
@@ -199,7 +199,7 @@
           margin: 5px 0;
           text-decoration: none;
           color: var(--secondary-color);
-           background-color: var(--primary-color); /* Light goldenrod color */
+           background-color: var(--primary-color);
           border-radius: 5px;
         }
 
@@ -225,7 +225,7 @@
         }
 
         .form-label {
-            color: var(--secondary-color); /* Dark text for labels */
+            color: var(--secondary-color);
             font-weight: bold;
         }
 
@@ -233,7 +233,7 @@
         .form-control {
             border: 1px solid var(--secondary-color);
             color: var(--secondary-color);
-            margin-bottom: 1rem; /* Add some spacing between form elements */
+            margin-bottom: 1rem;
         }
 
     </style>

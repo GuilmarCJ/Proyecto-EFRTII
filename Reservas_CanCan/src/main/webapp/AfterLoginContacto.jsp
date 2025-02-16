@@ -23,7 +23,7 @@
 
         body {
             color: var(--primary-color);
-            padding-top: 56px; /* Adjust for fixed navbar */
+            padding-top: 56px;
         }
 
         .navbar, .footer {
@@ -107,7 +107,7 @@
 
         .footer-input input {
             flex: 1;
-            max-width: 250px; /* Adjust the value as needed */
+            max-width: 250px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -132,17 +132,17 @@
         }
 
         .footer-redes a {
-           text-decoration: none; /* Remove underline from links */
+           text-decoration: none;
         }
 
         .footer-redes a:hover {
-             text-decoration: none; /* Ensure underline is not added on hover */
+             text-decoration: none;
         }
         .footer-redes li {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            margin-right: 15px; /* Add spacing between items */
+            margin-right: 15px;
         }
 
         .footer-redes li:last-child {
@@ -179,7 +179,7 @@
         }
 
         .form-label {
-            color: var(--secondary-color); /* Dark text for labels */
+            color: var(--secondary-color);
             font-weight: bold;
         }
 
@@ -187,7 +187,7 @@
         .form-control {
             border: 1px solid var(--secondary-color);
             color: var(--secondary-color);
-            margin-bottom: 1rem; /* Add some spacing between form elements */
+            margin-bottom: 1rem;
         }
 
         /* Contact info styles */
@@ -204,14 +204,14 @@
         }
         .contact-info i {
             margin-right: 0.5rem;
-            color: var(--primary-color); /* Icon color */
+            color: var(--primary-color);
         }
 
         /* Map container styles */
         .map-container {
             position: relative;
             overflow: hidden;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%;
             margin-bottom: 2rem;
         }
         .map-container iframe {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta - CanCan</title>
+    <title>Carta</title>
     <link rel="icon" type="image/png" href="https://cdn.worldvectorlogo.com/logos/cancan.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,7 +23,7 @@
 
         body {
             color: var(--primary-color);
-            padding-top: 56px; /* Adjust for fixed navbar */
+            padding-top: 56px;
         }
 
         .navbar,
@@ -75,10 +75,10 @@
         }
 
 		.dish-image-container {
-		    width: 30%;  /* Control the width of the image container */
+		    width: 30%;
 		    padding-right: 3%;
-		    display: flex; /* Use flexbox to control image sizing */
-		    align-items: center; /* Vertically center the image */
+		    display: flex;
+		    align-items: center;
 		}
 		.dish-img {
 		    max-width: 100%;
@@ -106,7 +106,7 @@
             color: var(--secondary-color);
         }
 
-        /* Filter Styles */
+
         .filter-container {
             margin-bottom: 20px;
             text-align: center;
@@ -184,7 +184,6 @@
         .footer-input input {
             flex: 1;
             max-width: 250px;
-            /* Adjust the value as needed */
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -210,12 +209,10 @@
 
         .footer-redes a {
             text-decoration: none;
-            /* Remove underline from links */
         }
 
         .footer-redes a:hover {
             text-decoration: none;
-            /* Ensure underline is not added on hover */
         }
 
         .footer-redes li {
@@ -223,7 +220,6 @@
             display: flex;
             align-items: center;
             margin-right: 15px;
-            /* Add spacing between items */
         }
 
         .footer-redes li:last-child {
@@ -597,7 +593,6 @@
     </footer>
     <!-- final de footer -->
 
-    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>

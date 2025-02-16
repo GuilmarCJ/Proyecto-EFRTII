@@ -23,7 +23,7 @@
 
         body {
             color: var(--primary-color);
-            padding-top: 56px; /* Adjust for fixed navbar */
+            padding-top: 56px;
         }
 
         .navbar,
@@ -75,10 +75,10 @@
         }
 
 		.dish-image-container {
-		    width: 30%;  /* Control the width of the image container */
+		    width: 30%;
 		    padding-right: 3%;
-		    display: flex; /* Use flexbox to control image sizing */
-		    align-items: center; /* Vertically center the image */
+		    display: flex;
+		    align-items: center;
 		}
 		.dish-img {
 		    max-width: 100%;
@@ -106,7 +106,6 @@
             color: var(--secondary-color);
         }
 
-        /* Filter Styles */
         .filter-container {
             margin-bottom: 20px;
             text-align: center;
@@ -184,7 +183,6 @@
         .footer-input input {
             flex: 1;
             max-width: 250px;
-            /* Adjust the value as needed */
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -210,12 +208,10 @@
 
         .footer-redes a {
             text-decoration: none;
-            /* Remove underline from links */
         }
 
         .footer-redes a:hover {
             text-decoration: none;
-            /* Ensure underline is not added on hover */
         }
 
         .footer-redes li {
@@ -223,7 +219,6 @@
             display: flex;
             align-items: center;
             margin-right: 15px;
-            /* Add spacing between items */
         }
 
         .footer-redes li:last-child {

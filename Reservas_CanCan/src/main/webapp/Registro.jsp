@@ -9,11 +9,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('images/fondo.jpg'); /* Ruta de la imagen de fondo */
-            background-size: cover; /* Ajusta la imagen para cubrir toda la página */
-            background-position: center; /* Centra la imagen */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
-            color: goldenrod; /* Texto dorado */
+            background-image: url('images/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: goldenrod;
             margin: 0;
             padding: 0;
             display: flex;
@@ -24,7 +24,7 @@
 
         .navbar {
             text-align: center;
-            background-color: black !important; /* Barra de navegación roja */
+            background-color: black !important;
             padding: 10px;
             position: fixed;
             top: 0;
@@ -33,8 +33,8 @@
         }
 
         .footer {
-            background-color: black; /* Pie de página negro */
-            color: goldenrod; /* Texto dorado */
+            background-color: black;
+            color: goldenrod;
             padding: 10px;
             position: fixed;
             bottom: 0;
@@ -44,34 +44,34 @@
 
         .container {
             display: flex;
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 100px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 1000px; /* Ancho aumentado */
-            margin-top: 60px; /* Espacio para la barra de navegación */
-            margin-bottom: 60px; /* Espacio para el pie de página */
+            width: 1000px;
+            margin-top: 60px;
+            margin-bottom: 60px;
         }
 
         .welcome-section {
             flex: 1;
-            padding: 30px; /* Más espacio interno */
+            padding: 30px;
             width: 50px
-            background-color: rgba(248, 249, 250, 0.9); /* Fondo gris claro semi-transparente */
+            background-color: rgba(248, 249, 250, 0.9);
             border-radius: 8px 0 0 8px;
         }
 
         .form-section {
             flex: 1;
-            padding: 90px; /* Más espacio interno */
+            padding: 90px;
         }
 
         h1 {
             text-align: center;
-            color: black; /* Texto negro */
+            color: black;
         }
 
         .form-group {
-            margin-bottom: 20px; /* Más espacio entre los campos */
+            margin-bottom: 20px;
         }
 
         .form-group label {
@@ -147,49 +147,49 @@
         }
     
         /* Estilos para el footer */
-.footer {
-    background-color: black;
-    color: goldenrod; 
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    max-width: 90%;
-    margin: 0 auto; 
-    padding: 10 20px; 
-}
-
-.footer-left {
-    display: flex;
-    align-items: center;
-    gap: 10px; 
-}
-
-.social-links {
-    display: flex;
-    gap: 10px; 
-}
-
-.social-links img {
-    width: 30px; 
-    height: 30px;
-    transition: opacity 0.3s ease;
-}
-
-.social-links img:hover {
-    opacity: 0.7; 
-}
-
-.logo1 {
-    height: 80px;
-    width: auto;
-}
+		.footer {
+		    background-color: black;
+		    color: goldenrod; 
+		    padding: 10px;
+		    position: fixed;
+		    bottom: 0;
+		    width: 100%;
+		}
+		
+		.footer-content {
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center; 
+		    max-width: 90%;
+		    margin: 0 auto; 
+		    padding: 10 20px; 
+		}
+		
+		.footer-left {
+		    display: flex;
+		    align-items: center;
+		    gap: 10px; 
+		}
+		
+		.social-links {
+		    display: flex;
+		    gap: 10px; 
+		}
+		
+		.social-links img {
+		    width: 30px; 
+		    height: 30px;
+		    transition: opacity 0.3s ease;
+		}
+		
+		.social-links img:hover {
+		    opacity: 0.7; 
+		}
+		
+		.logo1 {
+		    height: 80px;
+		    width: auto;
+		}
     </style>
 </head>
 <body>

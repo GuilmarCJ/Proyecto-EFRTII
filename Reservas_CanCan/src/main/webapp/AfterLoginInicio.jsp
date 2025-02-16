@@ -208,7 +208,6 @@
         .footer-input input {
             flex: 1;
             max-width: 250px;
-            /* Adjust the value as needed */
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -234,12 +233,10 @@
 
         .footer-redes a {
             text-decoration: none;
-            /* Remove underline from links */
         }
 
         .footer-redes a:hover {
             text-decoration: none;
-            /* Ensure underline is not added on hover */
         }
 
         .footer-redes li {
@@ -247,7 +244,6 @@
             display: flex;
             align-items: center;
             margin-right: 15px;
-            /* Add spacing between items */
         }
 
         .footer-redes li:last-child {
@@ -280,7 +276,6 @@
         /* Modal Styles */
         .modal {
             display: none;
-            /* Hidden by default */
             position: fixed;
             z-index: 1050;
             left: 0;
@@ -362,9 +357,7 @@
         }
 
         #defaultPublicityModal .close {
-            /*(Inherits styles from .close)*/
             color: white;
-            /* White color for visibility */
         }
           .profile-image {
         width: 30px;

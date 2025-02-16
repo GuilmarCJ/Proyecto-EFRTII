@@ -23,7 +23,7 @@
 
         body {
             color: var(--primary-color);
-            padding-top: 56px; /* Adjust for fixed navbar */
+            padding-top: 56px;
         }
 
         .navbar, .footer {
@@ -107,7 +107,7 @@
 
         .footer-input input {
             flex: 1;
-            max-width: 250px; /* Adjust the value as needed */
+            max-width: 250px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
@@ -132,17 +132,17 @@
         }
 
         .footer-redes a {
-           text-decoration: none; /* Remove underline from links */
+           text-decoration: none;
         }
 
         .footer-redes a:hover {
-             text-decoration: none; /* Ensure underline is not added on hover */
+             text-decoration: none;
         }
         .footer-redes li {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            margin-right: 15px; /* Add spacing between items */
+            margin-right: 15px;
         }
 
         .footer-redes li:last-child {
@@ -199,7 +199,7 @@
           margin: 5px 0;
           text-decoration: none;
           color: var(--secondary-color);
-           background-color: var(--primary-color); /* Light goldenrod color */
+           background-color: var(--primary-color);
           border-radius: 5px;
         }
 
