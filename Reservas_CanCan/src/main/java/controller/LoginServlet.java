@@ -23,12 +23,12 @@ public class LoginServlet extends HttpServlet {
         Usuario user = modelUsuario.validarUsuario(usuario, contrasena);
 
         if (user == null) {
-            // Usuario no existe o credenciales incorrectas
+            
             String mensaje = "Usuario o contraseña incorrectos";
             request.setAttribute("mensaje", mensaje);
             request.getRequestDispatcher("Login.jsp").forward(request, response);
         } else {
-            // Usuario válido, crear sesión
+            
             HttpSession session = request.getSession();
             session.setAttribute("objUsuario", user);
 
