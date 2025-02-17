@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import entity.Registro;
 import entity.Usuario;
 import util.MySqlDBConexion;
 
@@ -49,4 +51,79 @@ public class ModelUsuario {
 
         return user;
     }
+    
+    public boolean registrarUsuarioYRegistro(Usuario usuario, Registro registro) {
+        Connection conn = null;
+        PreparedStatement pstmUsuario = null;
+        PreparedStatement pstmRegistro = null;
+        ResultSet rs = null;
+        boolean exito = false;
+
+        try {
+          
+            conn = MySqlDBConexion.getConexion();
+
+         
+            conn.setAutoCommit(false);
+
+          
+            String sqlUsuario = "INSERT INTO CLIENTES_TBUsuarios (NomUsuario, ApeUsuario, CorreoUsuario, TeleUsuario) VALUES (?, ?, ?, ?)";
+            pstmUsuario = conn.prepareStatement(sqlUsuario, PreparedStatement.RETURN_GENERATED_KEYS);
+
+            pstmUsuario.setString(1, usuario.getNomUsuario());
+            pstmUsuario.setString(2, usuario.getApeUsuario());
+            pstmUsuario.setString(3, usuario.getCorreoUsuario());
+            pstmUsuario.setString(4, usuario.getTeleUsuario());
+
+            int filasAfectadas = pstmUsuario.executeUpdate();
+            if (filasAfectadas == 0) {
+                throw new SQLException("Error al insertar usuario.");
+            }
+
+            rs = pstmUsuario.getGeneratedKeys();
+            int idUsuario = 0;
+            if (rs.next()) {
+                idUsuario = rs.getInt(1);
+            } else {
+                throw new SQLException("No se pudo obtener el ID del usuario.");
+            }
+
+         
+            String sqlRegistro = "INSERT INTO SEGURIDAD_TBRegistro (CodUsuario, UsuarioRegis, ContraseñaRegis) VALUES (?, ?, ?)";
+            pstmRegistro = conn.prepareStatement(sqlRegistro);
+
+            pstmRegistro.setInt(1, idUsuario);
+            pstmRegistro.setString(2, registro.getUsuarioRegis());
+            pstmRegistro.setString(3, registro.getContraseniaRegis()); 
+
+            pstmRegistro.executeUpdate();
+
+      
+            conn.commit();
+            exito = true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                if (conn != null) {
+                    conn.rollback(); 
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmUsuario != null) pstmUsuario.close();
+                if (pstmRegistro != null) pstmRegistro.close();
+                if (conn != null) conn.setAutoCommit(true);
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return exito;
+    }
+    
 }
