@@ -251,43 +251,51 @@
             <h2>Regístrate Ya!!!!!</h2>
             <p>¿Ya tienes una cuenta? <a href="Login.jsp">Iniciar Sesión</a></p>
 
-            <form action="registro.jsp" method="post" class="needs-validation" novalidate>
+            <form action="registrarUsuarioServlet" method="post" class="needs-validation" novalidate>
                 <div class="form-group">
-                    <label for="dni">DNI / Número de documento</label>
-                    <input type="text" id="dni" name="dni" class="form-control" required>
+                 	<label for="nombre">Nombre:</label>
+			    	<input type="text" id="nombre" name="nombre" class="form-control" required><br>
                     <div class="invalid-feedback">
                         Campo obligatorio.
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" required>
+                    <label for="apellido">Apellido:</label>
+			    	<input type="text" id="apellido" name="apellido" class="form-control" required><br>
                     <div class="invalid-feedback">
                         Campo obligatorio.
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="apellidos">Apellidos</label>
-                    <input type="text" id="apellidos" name="apellidos" class="form-control" required>
+                    <label for="correo">Correo:</label>
+			   	 	<input type="email" id="correo" name="correo" class="form-control" required><br>
                     <div class="invalid-feedback">
                         Campo obligatorio.
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" class="form-control" required>
+                   <label for="telefono">Teléfono:</label>
+			   		 <input type="text" id="telefono" name="telefono" class="form-control" required><br>
                     <div class="invalid-feedback">
                         Campo obligatorio.
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
+                     <label for="usuarioRegis">Usuario:</label>
+			    	<input type="text" id="usuarioRegis" name="usuarioRegis" class="form-control" required><br>
                     <div class="invalid-feedback">
                         Campo obligatorio.
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">CONTINUAR</button>
+                 <div class="form-group">
+                     <label for="contrasenia">Contraseña:</label>
+			    <input type="password" id="contrasenia" name="contrasenia"  class="form-control" required><br>
+                    <div class="invalid-feedback">
+                        Campo obligatorio.
+                    </div>
+                </div>
+                 <button type="submit" class="btn btn-primary">Registrarse</button>
+                
             </form>
             <p><strong>¡No esperes más!</strong> Regístrate ahora y comienza a disfrutar de una experiencia única con nosotros. 😊</p>
         </div>
