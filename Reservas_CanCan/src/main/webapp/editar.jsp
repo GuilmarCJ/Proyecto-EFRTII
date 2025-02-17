@@ -45,7 +45,7 @@
         .carousel-item img {
             width: 100%;
             height: auto;
-            max-height: 600px;
+            max-height: 600px; /* Adjust this value as per your preference */
         }
         
         .section-img-container {
@@ -84,32 +84,37 @@
     </nav>
 <div class="container mt-5">
 		<br> <br>
-        <h2 class="text-center">Realice su Reservación</h2>
-        <form class="row g-3" action="ServletReserva?accion=guardar" method="post">
+        <h2 class="text-center">Modifique su Reservación</h2>
+        
+        
+        <form class="row g-3" action="ServletReserva?accion=actualizar" method="post">
+
+       				 <input type="hidden" name="id" value="<%=request.getAttribute("codReserva")%>">
+             <div class="mb-3">
+                <label for="codigoUsuario" class="form-label">Codigo de Usuario</label>
+                <input type="text" class="form-control" name="txtCodUsuario"  value="<%=request.getAttribute("codUsuario")%>" readonly>
+            </div>
             <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha de reservación</label>
-                <input type="date" class="form-control" name="txtFecha" required>
+                <input type="date" class="form-control" name="txtFecha" value="<%=request.getAttribute("fecReserva")%>" required>
                 <div class="invalid-feedback">Por favor, seleccione una fecha.</div>
             </div>
             <div class="mb-3">
                 <label for="hora" class="form-label">Hora de reservación</label>
-              <input type="time" class="form-control" name="txtHora" required>
+              <input type="time" class="form-control" name="txtHora" value="<%=request.getAttribute("horaReserva")%>" required>
                 <div class="invalid-feedback">Por favor, seleccione una hora.</div>
             </div>
             <div class="mb-3">
                 <label for="personas" class="form-label">Número de personas</label>
-                <input type="number" class="form-control" name="txtNumPersonas" min="1" required>
+                <input type="number" class="form-control" name="txtNumPersonas" min="1" value="<%=request.getAttribute("numPersonas")%>" required>
                 <div class="invalid-feedback">Ingrese un número válido de personas.</div>
             </div>
             <div class="mb-3">
                 <label for="comentarios" class="form-label">Comentarios adicionales</label>
-                <textarea class="form-control" id="comentarios" name="txtComentarios" rows="3"></textarea>
+                <textarea class="form-control" name="txtComentarios" rows="3"><%=request.getAttribute("comentReserva")%></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Reservar</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>
-        
-        <div id="confirmationMessage" class="alert alert-success mt-3 d-none" role="alert">
-        </div>
         <a href="ServletReserva?accion=listar">Ver Reservas</a>
     </div>
     

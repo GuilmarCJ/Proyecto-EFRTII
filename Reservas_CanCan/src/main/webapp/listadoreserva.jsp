@@ -2,6 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="entity.Reserva" %>
 <%@ page import="model.ReservaDAO" %>
+<%@ page import="controller.ServletReserva" %>
 <%@ page import="util.MySqlDBConexion" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.SQLException" %>
@@ -25,7 +26,8 @@
             background-repeat: no-repeat;
             height: 100vh;
         }
-        .container {
+        .container-lista {
+        	
             margin-top: 50px;
         }
         .card-header {
@@ -62,10 +64,67 @@
         .btn-info {
             background-color: #17a2b8;
         }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header {
+            background-color: goldenrod;
+            color: black;
+        }
+
+        .footer {
+            background-color: black;
+        }
+
+        .responsive-img {
+            max-height: 300px;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+        
+        .section-img-container {
+    		padding: 0 2%;
+    		width: 100%;
+		}
+		
+		.section-img {
+		    max-height: 1000px;
+		    max-width: 100%;
+		    width: auto;
+		    height: auto;
+		    display: block;
+		}
+		  
     </style>
 </head>
 <body>
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/cancan.png" alt="Logo" height="40"> Restaurante
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Reservaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Regresar <-</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <div class="container-lista">
         <div class="card">
             <div class="card-header">
                 <h2>Listado de Reservas</h2>
@@ -107,26 +166,22 @@
                                     <a href="ServletReserva?accion=eliminar&id=<%= reserva.getCodReserva() %>" class="btn btn-danger btn-action">
                                         <i class="fas fa-trash"></i> Eliminar
                                     </a>
-                                   <c:if test="${reserva.estado_reserva == 'pendiente'}">
+                                   <c:if test="${reserva.EstReserva == 'pendiente'}">
                                     <a href="ServletReserva?accion=cambiarEstado&id=<%= reserva.getCodReserva() %>" class="btn btn-warning btn-action">
-                                          <i class="fas fa-check-circle"></i> Marcar como Llegó
+                                          <i class="fas fa-check-circle"></i> Marcar como Confirmada
                                      </a>
                                   </c:if>
-                                    <a href="ServletReserva?accion=cancelar&id=<%= reserva.getCodReserva() %>" class="btn btn-success btn-action">
-                                        <i class="fas fa-ban"></i> Cancelar Reserva
-                                    </a>
                                     <a href="ServletReserva?accion=editar&id=<%= reserva.getCodReserva() %>" class="btn btn-info btn-action">
                                         <i class="fas fa-edit"></i> Editar
                                     </a>
                                 </td>
-                                <td><%= reserva.getEstReserva() %></td>
                             </tr>
                             <% 
                                     }
                                 } else {
                             %>
                             <tr>
-                                <td colspan="7" class="text-center">No hay reservas para mostrar.</td>
+                                <td colspan="10" class="text-center">No hay reservas para mostrar.</td>
                             </tr>
                             <% 
                                 }
