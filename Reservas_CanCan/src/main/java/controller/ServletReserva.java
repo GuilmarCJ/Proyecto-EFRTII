@@ -16,7 +16,7 @@ import entity.Reserva;
 /**
  * Servlet implementation class ReservaServlet
  */
-@WebServlet("/ReservaServlet")
+@WebServlet("/ServletReserva")
 public class ServletReserva extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ReservaDAO dao = new ReservaDAO();
@@ -60,19 +60,77 @@ public class ServletReserva extends HttpServlet {
 			     reser.setComentReserva(comentReserva);
 				
 			     System.out.println("Acción: guardar");
-			     System.out.println("Usuario: " + request.getParameter("txtusername"));
-			     System.out.println("Mesa: " + request.getParameter("txtmesa"));
-			     System.out.println("Fecha de Reserva: " + request.getParameter("txtfecha_reserva"));
-			     System.out.println("Hora de Reserva: " + request.getParameter("txttiempo_reserva"));
+			     System.out.println("Fecha Reserva: " + request.getParameter("txtFecha"));
+			     System.out.println("Hora Reserva: " + request.getParameter("txtHora"));
+			     System.out.println("N° Personas: " + request.getParameter("txtNumPersonas"));
+			     System.out.println("Comentarios: " + request.getParameter("txtComentarios"));
 			     
-				if(  dao.guardar(reser));{
+				if(dao.guardar(reser)){
 			 RequestDispatcher rd =	 request.getRequestDispatcher("ServletReserva?accion=listar");
 			 rd.forward(request, response);
 			 }	
 				}
+	else if(accion.equals("editar")) {
+		int id = Integer.parseInt(request.getParameter("id"));
+		
+		Reserva reser = dao.buscarID(id);
+		
+		if(reser != null) {
+		request.setAttribute("codReserva", reser.getCodReserva());
+		request.setAttribute("codUsuario", reser.getCodUsuario());
+		request.setAttribute("fecReserva", reser.getFecReserva());
+		request.setAttribute("horaReserva", reser.getHoraReserva());
+		request.setAttribute("numPersonas", reser.getNumPersonas());
+		request.setAttribute("comentReserva", reser.getComentReserva());
+		RequestDispatcher rd = request.getRequestDispatcher("editar.jsp");
+	    rd.forward(request, response);
+		}else {
+			request.setAttribute("error", "la reserva no existe");
+			RequestDispatcher rd = request.getRequestDispatcher("listadoreserva.jsp");
+			rd.forward(request, response);
+			}
 		}
+	else if (accion.equals("actualizar")) {
+		String fecReserva = request.getParameter("txtFecReserva");
+		String horaReserva = request.getParameter("txtHoraReserva");
+		int numPersonas = Integer.parseInt(request.getParameter("txtNumPersonas"));
+		String comentReserva = request.getParameter("txtComentarios");
+		int codUsuario = Integer.parseInt(request.getParameter("txtCodUsuario"));
+		int id = Integer.parseInt(request.getParameter("id"));
+		//CREAR OBJETO reserva
+		Reserva reser = new Reserva();
+		reser.setFecReserva(fecReserva);
+		reser.setHoraReserva(horaReserva);
+	    reser.setNumPersonas(numPersonas);
+		reser.setComentReserva(comentReserva);
+		reser.setCodUsuario(codUsuario);
+		reser.setCodReserva(id);
+		if(dao.actualizar(reser));{
+	 RequestDispatcher rd =	 request.getRequestDispatcher("ServletReserva?accion=listar");
+	 rd.forward(request, response);
+		}	
+	}
 		
+	else if (accion.equals("cambiarEstado")) {
+	    // Cambiar el estado de la reserva a "asistió"
+	    int id = Integer.parseInt(request.getParameter("id"));
+	    if (dao.cambiarEstadoReserva(id)) {
+	        RequestDispatcher rd = request.getRequestDispatcher("ServletReserva?accion=listar");
+	        rd.forward(request, response);
+	    }
+
+	}
+	else if (accion.equals("eliminar")) {
+		int id = Integer.parseInt(request.getParameter("id"));
+		if (dao.eliminar(id)) {
+			RequestDispatcher rd = request.getRequestDispatcher("ServletReserva?accion=listar");
+			rd.forward(request, response);
+			}
+		}
+		}
+	
 		
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

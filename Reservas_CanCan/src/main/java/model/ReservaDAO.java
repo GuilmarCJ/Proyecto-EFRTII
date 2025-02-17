@@ -135,19 +135,19 @@ public class ReservaDAO implements IReseva{
 		try {
 			
 			conn = obj.getConexion();
-			String sql ="UPDATE RESERVACIONES_TBReserva SET FecReserva=?,HoraReserva=?, NumPersonas=?, EstReserva=?, ComentReserva=? WHERE CodReserva=?";
+			String sql ="UPDATE RESERVACIONES_TBReserva SET FecReserva=?,HoraReserva=?, NumPersonas=?, ComentReserva=?, CodUsuario=? WHERE CodReserva=?";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, reser.getFecReserva());
-			ps.setString(2, reser.getHoraReserva());
-			ps.setInt(3, reser.getNumPersonas());
-			ps.setString(4, reser.getEstReserva());
-			ps.setString(5, reser.getComentReserva());
-			ps.setInt(6, reser.getCodReserva());
-			ps.executeUpdate();
-
-           return true;			
+	        ps.setString(2, reser.getHoraReserva());
+	        ps.setInt(3, reser.getNumPersonas());
+	        ps.setString(4, reser.getComentReserva());
+	        ps.setInt(5, reser.getCodUsuario());
+	        ps.setInt(6, reser.getCodReserva());
+			int filasAfectadas = ps.executeUpdate();
+	        return filasAfectadas > 0;		
 		} catch (SQLException ex) {
-			return false;			
+			 ex.printStackTrace();
+		        return false;			
 		} finally {
 			try {
 				conn.close();

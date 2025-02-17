@@ -13,12 +13,12 @@ public class Reserva {
 	public Reserva() {
 		codReserva=0;
 		codUsuario=0;
-		fecReserva=null;
-		horaReserva=null;
+		fecReserva="";
+		horaReserva="";
 		numPersonas=0;
-		estReserva=null;
-		comentReserva=null;
-		fecRegisReserva=null;
+		estReserva="";
+		comentReserva="";
+		fecRegisReserva="";
 		
 	}
 
